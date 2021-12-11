@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
-    "start": "fastify start -l info app.js --port 4000",
-    "dev": "fastify start -w -l info -P app.js --port 4000"
+    "start": "fastify start -l info app.js --port 4001",
+    "dev": "fastify start -w -l info -P app.js --port 4001"
   },
   "keywords": [],
   "author": "",

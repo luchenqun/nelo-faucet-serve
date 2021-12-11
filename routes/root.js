@@ -33,11 +33,13 @@ module.exports = async function (fastify, opts) {
   })
 
   fastify.post('/faucet', async function (request, reply) {
+    
     const { body, headers } = request
+    console.log(headers['x-real-ip'])
     const { to, id } = body
-    const { origin } = headers
+    const realIp = headers['x-real-ip'] || "127.0.0.1"
     const date = new Date().format("yyyyMMdd")
-    const key = date + "-" + origin
+    const key = date + "-" + realIp
     console.log(to, id, key)
     try {
       const info = await db.get(key);

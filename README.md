@@ -21,3 +21,24 @@ Run the test cases.
 ## Learn More
 
 To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
+
+## Nginx
+```
+	server {
+	  listen 80;
+
+	  server_name faucet.lucq.fun;
+
+	  root /var/www/nelo-faucet-web/build;
+	  index index.html;
+
+	  location / {
+		try_files $uri $uri/ =404;
+	  }
+	  location /faucet {
+		proxy_pass http://127.0.0.1:4001;
+		proxy_set_header Host $http_host;
+		proxy_set_header X-Real-IP $remote_addr;
+	  }
+	}
+```
