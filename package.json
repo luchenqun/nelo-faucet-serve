@@ -8,18 +8,20 @@
   },
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
-    "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "start": "fastify start -l info app.js --port 4000",
+    "dev": "fastify start -w -l info -P app.js --port 4000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "fastify": "^3.0.0",
-    "fastify-plugin": "^3.0.0",
     "fastify-autoload": "^3.3.1",
+    "fastify-cli": "^2.14.0",
+    "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.0",
-    "fastify-cli": "^2.14.0"
+    "pouchdb": "^7.2.2",
+    "web3": "^1.6.1"
   },
   "devDependencies": {
     "tap": "^15.0.9"
